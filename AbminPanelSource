@@ -1,0 +1,68 @@
+local Library = 
+loadstring(game:HttpGet("https://pastebin.com/raw/vff1bQ9F"))()
+
+local Window = Library.CreateLib("Doors But Cheaper And Shorter | Abmin Panel", "DarkTheme")
+
+local Tab = Window:NewTab("Player")
+
+local Section = Tab:NewSection("Player")
+
+Section:NewToggle("Field of View (Fov)", "Fov Camera", function(state)
+    if state then
+        game.Workspace.CurrentCamera.FieldOfView = 120
+    else
+        game.Workspace.CurrentCamera.FieldOfView = 80
+    end
+end)
+
+Section:NewToggle("SpeedBoost", "Faster Speed", function(state)
+    if state then
+        game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 31
+    else
+        game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 26
+    end
+end)
+
+Section:NewButton("Blackking Hub (Important)", "ButtonInfo", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/KINGHUB01/BlackKing/main/BlackKingMb"))()
+    print("Clicked")
+end)
+
+local Tab = Window:NewTab("Credits")
+
+local Section = Tab:NewSection("Credits Its (A exploit script)")
+
+Section:NewButton("Script By SumitScriptsYT on YT", "ButtonInfo", function()
+-- nothing 
+    print("Clicked")
+end)
+
+Section:NewButton("BlackKing Hub by KingHub", "ButtonInfo", function()
+-- nothing 
+    print("Clicked")
+end)
+
+local ScreenGui = Instance.new("ScreenGui")
+ScreenGui.Name = "ScreenGui"
+ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+ScreenGui.ResetOnSpawn = false
+
+local Toggle = Instance.new("TextButton")
+Toggle.Name = "Toggle"
+Toggle.Parent = ScreenGui
+Toggle.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Toggle.Position = UDim2.new(0, 0, 0.454706937, 0)
+Toggle.Size = UDim2.new(0, 90, 0, 38)
+Toggle.Font = Enum.Font.SourceSans
+Toggle.Text = "ui toggle"
+Toggle.TextColor3 = Color3.fromRGB(248, 248, 248)
+Toggle.TextSize = 28.000
+Toggle.Draggable = true
+Toggle.MouseButton1Click:connect(function()
+    Library:ToggleUI()
+end)
+
+local Corner = Instance.new("UICorner")
+Corner.Name = "Corner"
+Corner.Parent = Toggle
+
