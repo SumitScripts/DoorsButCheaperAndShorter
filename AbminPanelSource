@@ -1,7 +1,33 @@
 local Library = 
 loadstring(game:HttpGet("https://pastebin.com/raw/vff1bQ9F"))()
 
-local Window = Library.CreateLib("Doors But Cheaper And Shorter | Abmin Panel", "DarkTheme")
+local Window = Library.CreateLib("SumitScripts + BlackKing | Abmin Panel", "DarkTheme")
+
+local Tab = Window:NewTab("Credits/Games")
+
+local Section = Tab:NewSection("Credits Its (A exploit script)")
+
+Section:NewButton("Script By SumitScriptsYT on YT", "ButtonInfo", function()
+-- nothing 
+    print("Clicked")
+end)
+
+Section:NewButton("BlackKing Hub by KingHub", "ButtonInfo", function()
+-- nothing 
+    print("Clicked")
+end)
+
+local Section = Tab:NewSection("Games")
+
+Section:NewButton("Doors - Lobby And All Updates", "ButtonInfo", function()
+-- nothing 
+    print("Clicked")
+end)
+
+Section:NewButton("Doors but kinda Cheaper And Shorter - Game/Rooms", "ButtonInfo", function()
+-- nothing 
+    print("Clicked")
+end)
 
 local Tab = Window:NewTab("Player")
 
@@ -23,22 +49,44 @@ Section:NewToggle("SpeedBoost", "Faster Speed", function(state)
     end
 end)
 
-Section:NewButton("Blackking Hub (Important)", "ButtonInfo", function()
+Section:NewButton("Blackking Hub (Some Other Games)", "ButtonInfo", function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/KINGHUB01/BlackKing/main/BlackKingMb"))()
     print("Clicked")
 end)
 
-local Tab = Window:NewTab("Credits")
+local Section = Tab:NewSection("OP!!")
 
-local Section = Tab:NewSection("Credits Its (A exploit script)")
-
-Section:NewButton("Script By SumitScriptsYT on YT", "ButtonInfo", function()
--- nothing 
+Section:NewButton("rtx (NOT LAGGY)", "ButtonInfo", function()
+loadstring(game:HttpGet("https://pastebin.com/raw/beJhkj3m"))()
     print("Clicked")
 end)
 
-Section:NewButton("BlackKing Hub by KingHub", "ButtonInfo", function()
--- nothing 
+Section:NewButton("Unlock All achievements (Only Main Game)", "ButtonInfo", function()
+if game.PlaceId == 10873387885 then
+game:GetService("TeleportService"):Teleport(10926417608)
+else
+if game.PlaceId == 10926417608 then
+local http = game:GetService("HttpService")
+ local PlaceId = game.PlaceId
+ local data = http:GetAsync("https://apis.roproxy.com/universes/v1/places/"..PlaceId.."/universe")
+ if data then
+  data = http:JSONDecode(data)
+  local universeId = data.universeId
+  data = http:GetAsync(`https://badges.roproxy.com/v1/universes/{universeId}/badges?limit=100&sortOrder=Asc`)
+
+  if data then
+   data = http:JSONDecode(data)
+   for _, Badge in data.data do
+    for i,v in pairs(game.ReplicatedStorage:GetDescendants()) do
+if v.Name == "AwardEvent" then
+v:FireServer(Badge.id)
+end
+end
+end
+end
+   end
+  end
+ end
     print("Clicked")
 end)
 
@@ -54,7 +102,7 @@ Toggle.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 Toggle.Position = UDim2.new(0, 0, 0.454706937, 0)
 Toggle.Size = UDim2.new(0, 90, 0, 38)
 Toggle.Font = Enum.Font.SourceSans
-Toggle.Text = "ui toggle"
+Toggle.Text = "Panel"
 Toggle.TextColor3 = Color3.fromRGB(248, 248, 248)
 Toggle.TextSize = 28.000
 Toggle.Draggable = true
@@ -65,4 +113,3 @@ end)
 local Corner = Instance.new("UICorner")
 Corner.Name = "Corner"
 Corner.Parent = Toggle
-
